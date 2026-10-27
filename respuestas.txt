@@ -1,0 +1,26 @@
+
+1. ¿Qué significan las siglas ORM?
+Mapeo relacional de objetos.
+2. ¿Qué representa la clase Libro?
+Es la clase python que tiene los atributos que coincidirán con la tabla SQL de Libros.
+3. ¿Qué representa una instancia de Libro?
+Un objeto Libro creado a partir de la clase Libro con sus propios valores.
+4. ¿Para qué sirve __tablename__?
+Le indica a sqlacademy que esa clase corresponde a la tabla Libros.
+5. ¿Por qué id_libro debe declararse como clave primaria?
+Para evitar libros duplicados y identificar libros más fácilmente en una consulta.
+6. ¿Qué diferencia existe entre Mapped[int] y
+mapped_column(primary_key=True)?
+Mapped[int] indica que el atributo es de tipo entero de Python, mientras que mapped_column(primary_key=True) indica que la columna tiene una clave primaria. 
+7. ¿Qué función tiene el Engine?
+El engine gestiona las conexiones y permite que la comprobación SQL y la sesión (Session) se comuniquen con la base de datos.
+8. ¿Qué función tiene la Session?
+Session se usa para gestionar los datos a través de las conexiones, eliminando, filtrando, añadiendo, etc.
+9. ¿Qué devuelve session.scalars(select(Libro)).all()?
+Devuelve toda la lista de Libros.
+10. ¿Qué devuelve session.get(Libro, 999999)?
+Devuelve los datos del Libro con esa clave primaria, pero en este caso, con ese ID daría None.
+11. ¿Para qué sirve echo=True?
+Para que en el output imprima las instrucciones SQL que sqlacademy ejecuta, y las transacciones y conexiones.
+12. ¿Por qué no utilizamos float para el precio?
+Porque no representa necesariamente números decimales, con Decimal lo podemos representar de forma más clara y sin errores
